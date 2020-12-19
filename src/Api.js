@@ -93,15 +93,14 @@ export default {
         selectedHour) => {
         const token = await AsyncStorage.getItem('token');
 
-        const req = await fetch(`${BASE_API}/user/appointment`, {
+        const req = await fetch(`${BASE_API}/Mechanic/${userId}/appointment`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                token, 
-                id: userId,
+                token,                 
                 service,
                 year: selectedYear,
                 month: selectedMonth,

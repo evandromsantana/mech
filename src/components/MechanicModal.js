@@ -258,24 +258,21 @@ export default ({ show, setShow, user, service }) => {
             selectedMonth > 0 && 
             selectedDay > 0 &&
             selectedHour != null
-        ) {
-            /*let res = await Api.setAppointment(
+        ) {            
+            let res = await Api.setAppointment(
                 user.id,
-                service,
+                user.services[service].id,
                 selectedYear,
-                selectedMonth,
+                selectedMonth + 1,
                 selectedDay,
                 selectedHour
             );
             if(res.error == '') {
                 setShow(false);
-                navigation.navigate('appointments');
+                navigation.navigate('Appointments');
             } else {
                 alert(res.error);
-            }*/  
-            
-            setShow(false);
-            navigation.navigate('appointments');
+            }  
         } else {
             alert("Preencha todos os dados");
         }
