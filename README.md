@@ -38,4 +38,6 @@
 
 -Feito a Tela de Busca
 
+## 19/12/2020 (18:02)
 
+-Construção Tela de Favoritos
