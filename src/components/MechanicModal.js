@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components/native';
 import { useNavigation } from '@react-navigation/native';
 
+import Api from '../Api';
+
 import ExpandIcon from '../assets/expand.svg';
 import NavPrevIcon from '../assets/nav_prev.svg';
 import NavNextIcon from '../assets/nav_next.svg';
@@ -248,8 +250,35 @@ export default ({ show, setShow, user, service }) => {
         setShow(false);
     }
 
-    const handleFinishClick = () => {
-
+    const handleFinishClick = async () => {
+        if(
+            user.id &&
+            service != null &&
+            selectedYear > 0 && 
+            selectedMonth > 0 && 
+            selectedDay > 0 &&
+            selectedHour != null
+        ) {
+            /*let res = await Api.setAppointment(
+                user.id,
+                service,
+                selectedYear,
+                selectedMonth,
+                selectedDay,
+                selectedHour
+            );
+            if(res.error == '') {
+                setShow(false);
+                navigation.navigate('appointments');
+            } else {
+                alert(res.error);
+            }*/  
+            
+            setShow(false);
+            navigation.navigate('appointments');
+        } else {
+            alert("Preencha todos os dados");
+        }
     }
 
 
