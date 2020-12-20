@@ -129,4 +129,19 @@ export default {
         const json = await req.json();        
         return json;
     },
+    updateUser: async (body) => {
+        const token = await AsyncStorage.getItem('token');
+        body.token = token;
+
+        const req = await fetch(`${BASE_API}/user`, {
+            method: 'PUT',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        });
+        const json = await req.json();        
+        return json;
+    },
 };
