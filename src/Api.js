@@ -1,5 +1,6 @@
 import AsyncStorage from '@react-native-community/async-storage';
 
+//Mudar endereço
 const BASE_API = 'https://api.b7web.com.br/devbarber/api';
 
 export default {
@@ -145,3 +146,11 @@ export default {
         return json;
     },
 };
+
+/*
+Api.updateUser({
+    name: 'Novo nome',
+    email: 'E-mail novo@llllk.com',
+    password: '123',
+    password_confim: '123'
+}); */
